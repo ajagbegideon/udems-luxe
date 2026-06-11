@@ -1044,6 +1044,9 @@ footer a:hover {
   #products-page .prod-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .prod-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 #about-strip {
