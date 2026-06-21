@@ -3,258 +3,443 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Udems Luxe Collections — We're Upgrading</title>
-    <meta name="robots" content="noindex" />
+    <title>Udems Luxe Collections — Quality You Can Carry</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
-    <style>
-      :root {
-        --bg: #0b0b0c;
-        --bg-soft: #131314;
-        --gold: #c9a24b;
-        --gold-soft: #e8cf8a;
-        --ivory: #f4f1ea;
-        --muted: #8c8a85;
-        --line: rgba(201, 162, 75, 0.25);
-      }
+    <meta
+      name="description"
+      content="Buy premium quality bags, luggage, school bags, fashion bags and travel cases in Lagos Broad Street Market. Pocket friendly prices. Order on WhatsApp — 09022544951."
+    />
 
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+    <meta
+      name="keywords"
+      content="bags for sale Lagos, luggage Lagos Broad Street, fashion bags Lagos Island, school bags Lagos, buy bags Nigeria, travel luggage Nigeria, lunch bags Lagos, affordable bags Lagos, Udems Luxe Collections"
+    />
 
-      html,
-      body {
-        height: 100%;
-      }
+    <meta name="author" content="Ajagbe Gideon" />
 
-      body {
-        background: var(--bg);
-        color: var(--ivory);
-        font-family: "Jost", sans-serif;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-        padding: 24px;
-        position: relative;
-        overflow: hidden;
-      }
+    <meta
+      property="og:title"
+      content="Udems Luxe Collections — Premium Bags & Luggage in Lagos"
+    />
 
-      /* faint corner frame lines, echoes the hero on the main site */
-      body::before,
-      body::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 1px;
-        background: var(--line);
-      }
-      body::before {
-        left: 6%;
-      }
-      body::after {
-        right: 6%;
-      }
+    <meta
+      property="og:description"
+      content="Premium bags and luggage in Lagos Broad Street Market. Fashion bags, school bags, travel luggage and more. Order on WhatsApp today!"
+    />
 
-      .wrap {
-        text-align: center;
-        max-width: 560px;
-        position: relative;
-        z-index: 1;
-      }
+    <meta property="og:url" content="https://www.udemsluxecollections.com" />
 
-      .eyebrow {
-        font-size: 0.72rem;
-        letter-spacing: 0.32em;
-        text-transform: uppercase;
-        color: var(--gold);
-        margin-bottom: 28px;
-      }
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://www.udemsluxecollections.com/images/og-image.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Udems Luxe Collections" />
 
-      .logo {
-        font-family: "Cormorant Garamond", serif;
-        font-size: clamp(2.4rem, 6vw, 3.4rem);
-        font-weight: 600;
-        line-height: 1.05;
-        margin-bottom: 6px;
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-9NSQCS0DPC"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
       }
+      gtag("js", new Date());
+      gtag("config", "G-9NSQCS0DPC");
+    </script>
 
-      .logo span {
-        display: block;
-        font-style: italic;
-        font-weight: 400;
-        color: var(--gold-soft);
-        font-size: 0.55em;
-        letter-spacing: 0.06em;
-        margin-top: 4px;
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Udems Luxe Collections",
+        "description": "Trusted family-owned bag and luggage business in Broad Street, Lagos Island. Premium quality bags, fashion bags, school bags, travel luggage and more.",
+        "url": "https://www.udemsluxecollections.com",
+        "telephone": ["+2349022844951", "+2348055136741"],
+        "email": "udemsluxecollections@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Broad Street",
+          "addressLocality": "Lagos Island",
+          "addressRegion": "Lagos State",
+          "addressCountry": "NG"
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+          ],
+          "opens": "09:00",
+          "closes": "18:30"
+        },
+        "priceRange": "₦₦"
       }
-
-      .divider {
-        margin: 32px auto;
-        width: 140px;
-        height: 1px;
-        background: linear-gradient(
-          to right,
-          transparent,
-          var(--gold) 50%,
-          transparent
-        );
-        position: relative;
-      }
-
-      .divider span {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: var(--bg);
-        padding: 0 14px;
-        color: var(--gold);
-        font-size: 0.9rem;
-      }
-
-      .headline {
-        font-family: "Cormorant Garamond", serif;
-        font-size: clamp(1.5rem, 3.6vw, 2rem);
-        font-weight: 600;
-        margin-bottom: 16px;
-        line-height: 1.3;
-      }
-
-      .headline em {
-        color: var(--gold-soft);
-        font-style: italic;
-      }
-
-      .sub {
-        color: var(--muted);
-        font-size: 1rem;
-        line-height: 1.7;
-        max-width: 420px;
-        margin: 0 auto 40px;
-      }
-
-      .actions {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 18px;
-      }
-
-      .btn-whatsapp {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        background: var(--gold);
-        color: #1a1304;
-        text-decoration: none;
-        font-size: 0.85rem;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        font-weight: 500;
-        padding: 16px 34px;
-        border-radius: 2px;
-        transition: background 0.25s ease, transform 0.25s ease;
-      }
-
-      .btn-whatsapp:hover {
-        background: var(--gold-soft);
-        transform: translateY(-2px);
-      }
-
-      .btn-whatsapp svg {
-        width: 18px;
-        height: 18px;
-        flex-shrink: 0;
-      }
-
-      .phone-line {
-        font-size: 0.85rem;
-        color: var(--muted);
-        letter-spacing: 0.04em;
-      }
-
-      .phone-line a {
-        color: var(--ivory);
-        text-decoration: none;
-        border-bottom: 1px solid var(--line);
-      }
-
-      footer {
-        position: absolute;
-        bottom: 28px;
-        left: 0;
-        right: 0;
-        text-align: center;
-        font-size: 0.7rem;
-        letter-spacing: 0.08em;
-        color: var(--muted);
-      }
-
-      @media (prefers-reduced-motion: no-preference) {
-        .wrap {
-          animation: rise 0.9s ease both;
-        }
-      }
-
-      @keyframes rise {
-        from {
-          opacity: 0;
-          transform: translateY(14px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-    </style>
+    </script>
+    <meta
+      name="google-site-verification"
+      content="XzItiG11iu_MazfvIkWXNrDPBrxVZZJGhmhAPW2EGWg"
+    />
   </head>
   <body>
-    <div class="wrap">
-      <p class="eyebrow">Udems Luxe Collections</p>
+    <!-- NAVIGATION -->
+    <header>
+      <nav>
+        <div class="logo">
+          Udems Luxe
+          <span>Collections</span>
+        </div>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li>
+            <button class="close-menu" id="close-menu" aria-label="Close menu">
+              ✕
+            </button>
+          </li>
+        </ul>
+        <div class="nav-right">
+          <a
+            href="https://wa.me/2349022844951?text=Hello,%20I%20want%20to%20place%20an%20order%20from%20Udems%20Luxe%20Collections"
+            class="nav-cta"
+            target="_blank"
+            >Place Order</a
+          >
+          <button class="hamburger" id="hamburger" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </nav>
+    </header>
 
-      <h1 class="logo">
-        Udems <span>Luxe Collections</span>
-      </h1>
+    <!-- HERO -->
+    <main>
+      <section id="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-lines-v"></div>
+        <div class="hero-lines-v2"></div>
+        <div class="hero-content">
+          <div class="hero-label">Premium Bags & Luggage — Lagos, Nigeria</div>
+          <h1 class="hero-title">
+            Udems
+            <em>Luxe</em>
+          </h1>
+          <p class="hero-sub">Quality You Can Carry</p>
+          <div class="hero-btns">
+            <a
+              href="https://wa.me/2349022844951?text=Hello,%20I%20want%20to%20place%20an%20order%20from%20Udems%20Luxe%20Collections"
+              class="btn-primary"
+              target="_blank"
+              >Place Your Order</a
+            >
+            <a href="#products" class="btn-ghost">View Collection</a>
+          </div>
+        </div>
+        <div class="hero-badge">
+          <div class="hero-badge-inner">
+            <span class="txt">Established<br />Since The</span>
+            <span class="num">90s</span>
+          </div>
+        </div>
+      </section>
 
+      <!-- MARQUEE -->
+      <div class="marquee-wrap">
+        <div class="marquee-track">
+          <span class="marquee-item">Fashion Bags</span
+          ><span class="marquee-dot">✦</span>
+          <span class="marquee-item">Travel Luggage</span
+          ><span class="marquee-dot">✦</span>
+          <span class="marquee-item">Lunch Bags</span
+          ><span class="marquee-dot">✦</span>
+          <span class="marquee-item">School Bags</span
+          ><span class="marquee-dot">✦</span>
+          <span class="marquee-item">Premium Quality</span
+          ><span class="marquee-dot">✦</span>
+          <span class="marquee-item">Fast Delivery</span
+          ><span class="marquee-dot">✦</span>
+          <span class="marquee-item">Broad Street</span
+          ><span class="marquee-dot">✦</span>
+          <span class="marquee-item">Pocket Friendly</span
+          ><span class="marquee-dot">✦</span>
+          <span class="marquee-item">Fashion Bags</span
+          ><span class="marquee-dot">✦</span>
+          <span class="marquee-item">Travel Luggage</span
+          ><span class="marquee-dot">✦</span>
+          <span class="marquee-item">Lunch Bags</span
+          ><span class="marquee-dot">✦</span>
+          <span class="marquee-item">School Bags</span
+          ><span class="marquee-dot">✦</span>
+          <span class="marquee-item">Premium Quality</span
+          ><span class="marquee-dot">✦</span>
+          <span class="marquee-item">Fast Delivery</span
+          ><span class="marquee-dot">✦</span>
+          <span class="marquee-item">Broad Street</span
+          ><span class="marquee-dot">✦</span>
+          <span class="marquee-item">Pocket Friendly</span
+          ><span class="marquee-dot">✦</span>
+        </div>
+      </div>
+
+      <!-- WHY CHOOSE US -->
+      <section id="why">
+        <p class="s-label">Why Choose Us</p>
+        <h2 class="s-title">
+          Here is why customers trust<br /><em>Udems Luxe Collections</em>
+        </h2>
+        <div class="why-grid">
+          <div class="why-card">
+            <div class="why-icon">👜</div>
+            <h3>Quality Products</h3>
+            <p>
+              We stock only premium brand accessories that build your confidence
+              everywhere you go.
+            </p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon">🤝</div>
+            <h3>Reliability</h3>
+            <p>
+              Udems Luxe is a brand you can rely on. We don't just do business —
+              we stand for trust.
+            </p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon">💰</div>
+            <h3>Pocket Friendly</h3>
+            <p>
+              Get quality products from our store at affordable prices without
+              breaking the bank.
+            </p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon">🚚</div>
+            <h3>Fast Delivery</h3>
+            <p>
+              We work as a team to ensure your goods reach you as soon as your
+              order is completed.
+            </p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon">💬</div>
+            <h3>Expert Advice</h3>
+            <p>
+              Our staff are always ready to help you find the perfect bag or
+              luggage for your needs.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- GOLD DIVIDER -->
       <div class="divider"><span>✦</span></div>
 
-      <h2 class="headline">We're polishing things <em>up</em></h2>
-      <p class="sub">
-        Our site is being upgraded with new collections and improvements.
-        We'll be back online shortly — in the meantime, reach us directly on
-        WhatsApp to place your order.
-      </p>
+      <!-- PRODUCTS -->
+      <section id="products">
+        <p class="s-label">Our Collection</p>
+        <h2 class="s-title">
+          Premium Bags & Luggage<br /><em>for Every Journey</em>
+        </h2>
+        <div class="prod-grid">
+          <div class="prod-card">
+            <span class="prod-icon">🧳</span>
+            <h3>Travel Luggage</h3>
+            <p>
+              Premium quality boxes and luggage built for all your travel needs
+              — durable, stylish and spacious.
+            </p>
+            <a
+              href="https://wa.me/2349022844951?text=Hello,%20I%20want%20to%20order%20Travel%20Luggage"
+              class="prod-order"
+              target="_blank"
+              >Order via WhatsApp →</a
+            >
+          </div>
+          <div class="prod-card">
+            <span class="prod-icon">👜</span>
+            <h3>Fashion Bags</h3>
+            <p>
+              Stylish fashion bags that complement every outfit and elevate your
+              look wherever you go.
+            </p>
+            <a
+              href="https://wa.me/2349022844951?text=Hello,%20I%20want%20to%20order%20a%20Fashion%20Bag"
+              class="prod-order"
+              target="_blank"
+              >Order via WhatsApp →</a
+            >
+          </div>
+          <div class="prod-card">
+            <span class="prod-icon">🎒</span>
+            <h3>School Bags</h3>
+            <p>
+              Durable, spacious and affordable bags perfect for school, campus
+              and everyday carry.
+            </p>
+            <a
+              href="https://wa.me/2349022844951?text=Hello,%20I%20want%20to%20order%20a%20School%20Bag"
+              class="prod-order"
+              target="_blank"
+              >Order via WhatsApp →</a
+            >
+          </div>
+          <div class="prod-card">
+            <span class="prod-icon">💼</span>
+            <h3>Lunch Bags</h3>
+            <p>
+              Quality insulated lunch bags for office, school and daily use —
+              practical and good looking.
+            </p>
+            <a
+              href="https://wa.me/2349022844951?text=Hello,%20I%20want%20to%20order%20a%20Lunch%20Bag"
+              class="prod-order"
+              target="_blank"
+              >Order via WhatsApp →</a
+            >
+          </div>
+        </div>
+        <div class="prod-cta">
+          <a href="products.html" class="btn-ghost"> View All Products </a>
 
-      <div class="actions">
-        <a
-          href="https://wa.me/2349022844951?text=Hello,%20I%20want%20to%20place%20an%20order%20from%20Udems%20Luxe%20Collections"
-          class="btn-whatsapp"
-          target="_blank"
-          rel="noopener"
-        >
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.86 9.86 0 0 0 12.04 2zm0 1.67c2.21 0 4.29.86 5.86 2.43a8.23 8.23 0 0 1 2.42 5.81c0 4.53-3.69 8.22-8.23 8.22a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3.12.82.83-3.04-.2-.31a8.18 8.18 0 0 1-1.25-4.37c0-4.53 3.69-8.24 8.17-8.24zm-4.5 4.59c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.67 2.7 4.16 3.68 2.07.82 2.49.66 2.94.62.45-.04 1.45-.59 1.65-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28-.24-.12-1.45-.72-1.67-.8-.22-.08-.39-.12-.55.12-.16.24-.63.8-.78.96-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.95-1.21-.72-.64-1.21-1.44-1.35-1.68-.14-.24-.02-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.36-.76-1.86-.2-.48-.4-.42-.55-.43z"
-            />
-          </svg>
-          Order on WhatsApp
-        </a>
+          <a
+            href="https://wa.me/2349022844951?text=Hello,%20I%20want%20to%20place%20an%20order%20from%20Udems%20Luxe%20Collections"
+            class="btn-primary"
+            target="_blank"
+            >Place Your Order Now</a
+          >
+        </div>
+      </section>
 
-        <p class="phone-line">
-          Or call <a href="tel:09022844951">09022844951</a> /
-          <a href="tel:08055136741">08055136741</a>
-        </p>
+      <!-- DIVIDER -->
+      <div class="divider"><span>✦</span></div>
+
+      <!-- ABOUT STRIP -->
+      <section id="about-strip">
+        <div class="about-text">
+          <p class="s-label">About Us</p>
+          <h2 class="s-title">Trusted Since<br /><em>The 90s</em></h2>
+          <p>
+            Udems Luxe Collections is a trusted and reliable family-owned
+            luggage business based in Broad Street, Lagos Island. We proudly
+            serve customers across Nigeria with premium quality luggage for
+            school use, fashion, office use and commercial purposes.
+          </p>
+          <p>
+            Over the years we have built a strong goodwill for quality products,
+            excellent customer service and reliable products trusted by
+            thousands of customers across Nigeria.
+          </p>
+          <br />
+          <a
+            href="https://wa.me/2349022844951"
+            class="btn-ghost"
+            target="_blank"
+            >Contact Us</a
+          >
+        </div>
+        <div class="about-stats">
+          <div class="stat">
+            <span class="big">90s</span>
+            <span class="lbl">Established</span>
+          </div>
+          <div class="stat">
+            <span class="big">🇳🇬</span>
+            <span class="lbl">Nationwide</span>
+          </div>
+          <div class="stat">
+            <span class="big">5★</span>
+            <span class="lbl">Rated Service</span>
+          </div>
+          <div class="stat">
+            <span class="big">24h</span>
+            <span class="lbl">Fast Delivery</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact">
+        <p class="s-label">Get In Touch</p>
+        <h2 class="s-title">Find Us &<br /><em>Place Your Order</em></h2>
+        <div class="contact-grid">
+          <div class="contact-item">
+            <span class="c-icon">📍</span>
+            <div>
+              <h3>Location</h3>
+              <p>Broad Street,<br />Lagos Island, Lagos State</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="c-icon">📞</span>
+            <div>
+              <h3>Call Us</h3>
+              <a href="tel:09022844951">09022844951</a><br />
+              <a href="tel:08055136741">08055136741</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="c-icon">✉️</span>
+            <div>
+              <h3>Email</h3>
+              <a href="mailto:udemsluxecollections@gmail.com"
+                >udemsluxecollections@gmail.com</a
+              >
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="c-icon">🕘</span>
+            <div>
+              <h3>Opening Hours</h3>
+              <p>Mon – Sat: 9:00AM – 6:30PM<br />Closed Sunday</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-left">
+        <div class="footer-logo">Udems Luxe Collections</div>
+        <p>Quality You Can Carry ✦</p>
       </div>
-    </div>
 
-    <footer>Quality You Can Carry — © 2026 Udems Luxe Collections</footer>
+      <div class="footer-center">
+        <p>📍 Broad Street, Lagos Island</p>
+      </div>
+
+      <div class="footer-right">
+        <p>📞 09022844951 | 08055136741</p>
+        <p>© 2026 Udems Luxe Collections</p>
+      </div>
+    </footer>
+
+    <!-- WHATSAPP FLOAT -->
+    <a
+      href="https://wa.me/2349022844951?text=Hello,%20I%20want%20to%20place%20an%20order%20from%20Udems%20Luxe%20Collections"
+      class="wa-float"
+      target="_blank"
+    >
+      <img src="images/whatsapp.png" alt="WhatsApp" width="30" height="30" />
+    </a>
   </body>
+  <script src="script.js"></script>
 </html>
