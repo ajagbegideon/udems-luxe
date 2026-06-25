@@ -105,9 +105,9 @@ Information Technology Student • Web Developer • Building Practical AI & Web
 
 🌐 Portfolio: https://gideon-ajagbe.vercel.app
 
-💼 LinkedIn: https://linkedin.com/in/ajagbe-gideon
+💼 LinkedIn: https://linkedin.com/in/ajagbegideon
 
-🐙 GitHub: https://github.com/ajabegideon
+🐙 GitHub: https://github.com/ajagbegideon
 
 ---
 
