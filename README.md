@@ -79,6 +79,16 @@ Optimized for:
 
 Information Technology Student • Freelance Web Developer • Aspiring AI Engineer
 
-🌐 Portfolio: https://gideon-ajagbe.vercel.app  
-💼 LinkedIn: https://www.linkedin.com/in/ajagbegideon  
-🐙 GitHub: https://github.com/ajagbegideon
+🌐 Portfolio: https://gideon-ajagbe.vercel.app
+
+💼 LinkedIn: https://linkedin.com/in/ajagbe-gideon
+
+🐙 GitHub: https://github.com/ajabegideon
+
+---
+
+## ⭐ Support
+
+If you found this project helpful, consider giving it a **⭐ Star** on GitHub.
+
+It helps support my work and future projects.
