@@ -1,34 +1,26 @@
-# 👟 Udems Luxe Collections
+# 👜 Udems Luxe Collections
 
-A modern, responsive e-commerce website built for **Udems Luxe Collections**, showcasing premium footwear with a clean user experience and mobile-first design.
-
-Designed to provide customers with an elegant way to browse products and contact the business.
+A modern, responsive business website built for **Udems Luxe Collections**, a trusted family-owned bag and luggage store based in Broad Street, Lagos Island. The site showcases their premium product range and drives customer orders via WhatsApp.
 
 ---
 
-## 🌐 Live Demo
+## 🌐 Live Site
 
 👉 https://www.udemsluxecollections.com/
 
 ---
 
-## 📸 Preview
-
-![Udems Luxe Collections Preview](assets/images/udems-preview.png)
-
----
-
 ## ✨ Features
 
-- 🎨 Modern and responsive user interface
-- 📱 Mobile-first design
-- 👟 Product showcase section
-- 🖼️ Image gallery
-- 📞 Contact and enquiry pages
-- ⚡ Smooth navigation
-- 🚀 Fast loading performance
-- 🔍 SEO-friendly structure
-- 🌍 Cross-browser compatibility
+- 🎨 Custom black-and-gold luxury design
+- 📱 Fully responsive — mobile, tablet, desktop
+- 👜 Product showcase (Fashion Bags, School Bags, Travel Luggage, Handbags, Backpacks & more)
+- 💬 WhatsApp ordering integration on every product
+- 🔍 Full SEO implementation — meta tags, JSON-LD structured data, Open Graph, sitemap, robots.txt
+- 📊 Google Analytics 4 (GA4) tracking
+- 🗺️ Google Search Console setup & submission
+- ⚡ Smooth navigation with hamburger menu
+- 🌍 Cross-browser compatible
 
 ---
 
@@ -37,7 +29,8 @@ Designed to provide customers with an elegant way to browse products and contact
 - HTML5
 - CSS3
 - JavaScript
-- Google Fonts
+- Google Fonts (Cormorant Garamond + Jost)
+- Vercel (deployment with auto-deploy via GitHub)
 
 ---
 
@@ -46,36 +39,32 @@ Designed to provide customers with an elegant way to browse products and contact
 ```text
 Udems-Luxe-Collections/
 │
-├── assets/
-│   ├── images/
-│   └── icons/
-│
+├── images/
 ├── index.html
 ├── products.html
-├── gallery.html
+├── about.html
 ├── contact.html
-├── enquiry.html
-├── style.css
-├── main.js
-└── README.md
+├── styles.css
+├── script.js
+├── sitemap.xml
+├── robots.txt
+└── site.webmanifest
 ```
 
 ---
 
 ## 🎯 Project Goals
 
-This project was developed to:
-
-- Create a modern online presence for a footwear brand.
-- Practice responsive web design.
-- Improve UI/UX skills.
-- Build a production-ready business website.
+- Build a production-ready online presence for a real Lagos business
+- Drive customer orders through WhatsApp integration
+- Implement complete on-page SEO for local search visibility
+- Deliver a luxury aesthetic that matches the brand identity
 
 ---
 
 ## 📱 Responsive Design
 
-The website is fully responsive and optimized for:
+Optimized for:
 
 - 💻 Desktop
 - 💼 Laptop
@@ -84,35 +73,12 @@ The website is fully responsive and optimized for:
 
 ---
 
-## 🚀 Future Improvements
-
-- 🛒 Shopping cart functionality
-- 💳 Online payment integration
-- 🔍 Product search
-- ❤️ Wishlist feature
-- 👤 User authentication
-- 📦 Product filtering
-- ⭐ Product reviews
-- 🌙 Dark mode
-
----
-
-## 👨‍💻 Author
+## 👨‍💻 Developer
 
 **Ajagbe Gideon**
 
-Information Technology Student • Web Developer • Building Practical AI & Web Solutions
+Information Technology Student • Freelance Web Developer • Aspiring AI Engineer
 
-🌐 Portfolio: https://gideon-ajagbe.vercel.app
-
-💼 LinkedIn: https://linkedin.com/in/ajagbe-gideon
-
-🐙 GitHub: https://github.com/ajabegideon
-
----
-
-## ⭐ Support
-
-If you found this project helpful, consider giving it a **⭐ Star** on GitHub.
-
-It helps support my work and future projects.
+🌐 Portfolio: https://gideon-ajagbe.vercel.app  
+💼 LinkedIn: https://www.linkedin.com/in/ajagbegideon  
+🐙 GitHub: https://github.com/ajagbegideon
