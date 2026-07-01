@@ -545,7 +545,6 @@ section {
   margin-top: 20px;
 }
 
-
 /* ── ABOUT STRIP ── */
 #about-strip {
   background: linear-gradient(
@@ -799,6 +798,21 @@ footer a:hover {
   padding-top: 80px;
   border-top: 1px solid var(--gold-border);
 }
+/* ── MAP EMBED ── */
+.map-embed {
+  margin-top: 60px;
+  border: 1px solid var(--gold-border);
+  padding: 8px;
+  background: var(--black2);
+}
+
+.map-embed iframe {
+  width: 100%;
+  height: 400px;
+  display: block;
+  filter: grayscale(0.7) invert(0.9) contrast(1.1) brightness(1.05) sepia(0.15)
+    hue-rotate(180deg);
+}
 
 .contact-cta p {
   font-size: 14px;
@@ -953,6 +967,9 @@ footer a:hover {
   .about-stats {
     grid-template-columns: 1fr 1fr;
   }
+  .map-embed iframe {
+    height: 280px;
+  }
 
   /* ABOUT CONTENT */
   .about-main {
@@ -979,19 +996,19 @@ footer a:hover {
   }
 
   /* FOOTER */
-  
-  footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 15px;
-  padding: 40px 20px;
-}
 
-.footer-right {
-  text-align: center;
-}
+  footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+    padding: 40px 20px;
+  }
+
+  .footer-right {
+    text-align: center;
+  }
 
   .footer-logo {
     font-size: 16px;
