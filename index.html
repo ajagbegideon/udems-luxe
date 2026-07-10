@@ -4,11 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Udems Luxe Collections | Premium Bags & Luggage in Lagos</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="icon" href="/favicon.ico" />
-    <link rel="manifest" href="/site.webmanifest" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -142,27 +137,44 @@
         <div class="hero-bg"></div>
         <div class="hero-lines-v"></div>
         <div class="hero-lines-v2"></div>
-        <div class="hero-content">
-          <div class="hero-label">Premium Bags & Luggage — Lagos, Nigeria</div>
-          <h1 class="hero-title">
-            Udems
-            <em>Luxe</em>
-          </h1>
-          <p class="hero-sub">Quality You Can Carry</p>
-          <div class="hero-btns">
-            <a
-              href="https://wa.me/2349022844951?text=Hello,%20I%20want%20to%20place%20an%20order%20from%20Udems%20Luxe%20Collections"
-              class="btn-primary"
-              target="_blank"
-              >Place Your Order</a
-            >
-            <a href="#products" class="btn-ghost">View Collection</a>
+
+        <div class="hero-layout">
+          <div class="hero-content">
+            <div class="hero-label">Premium Bags & Luggage — Lagos, Nigeria</div>
+            <h1 class="hero-title">
+              Udems
+              <em>Luxe</em>
+            </h1>
+            <p class="hero-sub">Quality You Can Carry</p>
+            <p class="hero-desc">
+              Premium bags, luggage and accessories — handpicked for
+              everyday confidence and built to last, from a Broad Street
+              name trusted since the 90s.
+            </p>
+            <div class="hero-btns">
+              <a
+                href="https://wa.me/2349022844951?text=Hello,%20I%20want%20to%20place%20an%20order%20from%20Udems%20Luxe%20Collections"
+                class="btn-primary"
+                target="_blank"
+                >Place Your Order</a
+              >
+              <a href="products.html" class="btn-ghost">View Collection</a>
+            </div>
           </div>
-        </div>
-        <div class="hero-badge">
-          <div class="hero-badge-inner">
-            <span class="txt">Established<br />Since The</span>
-            <span class="num">90s</span>
+
+          <div class="hero-visual">
+            <div class="hero-visual-back">
+              <img id="hero-back-img" src="" alt="" />
+            </div>
+            <div class="hero-visual-front">
+              <img id="hero-front-img" src="" alt="" class="hero-fade-img" />
+            </div>
+            <div class="hero-badge">
+              <div class="hero-badge-inner">
+                <span class="txt">Established<br />Since The</span>
+                <span class="num">90s</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -257,73 +269,17 @@
       <!-- GOLD DIVIDER -->
       <div class="divider"><span>✦</span></div>
 
-      <!-- PRODUCTS -->
-      <section id="products">
-        <p class="s-label">Our Collection</p>
+      <!-- FEATURED COLLECTIONS -->
+      <section id="featured-collections">
+        <p class="s-label">Shop By Category</p>
         <h2 class="s-title">
-          Premium Bags & Luggage<br /><em>for Every Journey</em>
+          Featured<br /><em>Collections</em>
         </h2>
-        <div class="prod-grid">
-          <div class="prod-card">
-            <span class="prod-icon">🧳</span>
-            <h3>Travel Luggage</h3>
-            <p>
-              Premium quality boxes and luggage built for all your travel needs
-              — durable, stylish and spacious.
-            </p>
-            <a
-              href="https://wa.me/2349022844951?text=Hello,%20I%20want%20to%20order%20Travel%20Luggage"
-              class="prod-order"
-              target="_blank"
-              >Order via WhatsApp →</a
-            >
-          </div>
-          <div class="prod-card">
-            <span class="prod-icon">👜</span>
-            <h3>Fashion Bags</h3>
-            <p>
-              Stylish fashion bags that complement every outfit and elevate your
-              look wherever you go.
-            </p>
-            <a
-              href="https://wa.me/2349022844951?text=Hello,%20I%20want%20to%20order%20a%20Fashion%20Bag"
-              class="prod-order"
-              target="_blank"
-              >Order via WhatsApp →</a
-            >
-          </div>
-          <div class="prod-card">
-            <span class="prod-icon">🎒</span>
-            <h3>School Bags</h3>
-            <p>
-              Durable, spacious and affordable bags perfect for school, campus
-              and everyday carry.
-            </p>
-            <a
-              href="https://wa.me/2349022844951?text=Hello,%20I%20want%20to%20order%20a%20School%20Bag"
-              class="prod-order"
-              target="_blank"
-              >Order via WhatsApp →</a
-            >
-          </div>
-          <div class="prod-card">
-            <span class="prod-icon">💼</span>
-            <h3>Lunch Bags</h3>
-            <p>
-              Quality insulated lunch bags for office, school and daily use —
-              practical and good looking.
-            </p>
-            <a
-              href="https://wa.me/2349022844951?text=Hello,%20I%20want%20to%20order%20a%20Lunch%20Bag"
-              class="prod-order"
-              target="_blank"
-              >Order via WhatsApp →</a
-            >
-          </div>
+        <div class="cat-hero-grid" id="cat-hero-grid">
+          <!-- rendered by homepage.js, shared with products.html -->
         </div>
         <div class="prod-cta">
-          <a href="products.html" class="btn-ghost"> View All Products </a>
-
+          <a href="products.html" class="btn-ghost">View All Collections</a>
           <a
             href="https://wa.me/2349022844951?text=Hello,%20I%20want%20to%20place%20an%20order%20from%20Udems%20Luxe%20Collections"
             class="btn-primary"
@@ -342,17 +298,18 @@
           <p class="s-label">About Us</p>
           <h2 class="s-title">Trusted Since<br /><em>The 90s</em></h2>
           <p>
-            Udems Luxe Collections is an extension of M.I.C Godswill Nig. Ltd.,
-            which has been in existence since the 90s and is a trusted and
-            reliable family-owned business based in Broad Street, Lagos Island.
-            We proudly serve customers across Nigeria with premium-quality
-            luggage for school use, fashion, office use and commercial purposes.
-          </p>
-          <p>
-            Over the years we have built strong goodwill for quality products,
-            pocket-friendly prices, excellent customer service and reliable
-            products trusted by thousands of customers across Nigeria.
-          </p>
+              Udems Luxe Collections is an extension of M.I.C Godswill Nig. Ltd.,
+              which has been in existence since the 90s and is a trusted and
+              reliable family-owned business based in Broad Street, Lagos
+              Island. We proudly serve customers across Nigeria with
+              premium-quality luggage for school use, fashion, office use and
+              commercial purposes.
+            </p>
+            <p>
+              Over the years we have built strong goodwill for quality products,
+              pocket-friendly prices, excellent customer service and reliable
+              products trusted by thousands of customers across Nigeria.
+            </p>
           <br />
           <a
             href="https://wa.me/2349022844951"
@@ -447,5 +404,7 @@
       <img src="images/whatsapp.png" alt="WhatsApp" width="30" height="30" />
     </a>
   </body>
+  <script src="products-data.js"></script>
+  <script src="homepage.js"></script>
   <script src="script.js"></script>
 </html>

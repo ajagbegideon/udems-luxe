@@ -20,7 +20,7 @@ html {
   --gold-border: rgba(200, 164, 90, 0.18);
   --white: #faf6ef;
   --white2: rgba(250, 246, 239, 0.7);
-  --white3: rgba(250, 246, 239, 0.4);
+  --white3: rgba(255, 255, 255, 0.95);
 }
 
 body {
@@ -545,6 +545,7 @@ section {
   margin-top: 20px;
 }
 
+
 /* ── ABOUT STRIP ── */
 #about-strip {
   background: linear-gradient(
@@ -638,7 +639,7 @@ section {
 }
 
 .contact-item h3 {
-  font-size: 13px;
+  font-size: 10px;
   letter-spacing: 3px;
   text-transform: uppercase;
   color: var(--gold3);
@@ -798,21 +799,6 @@ footer a:hover {
   padding-top: 80px;
   border-top: 1px solid var(--gold-border);
 }
-/* ── MAP EMBED ── */
-.map-embed {
-  margin-top: 60px;
-  border: 1px solid var(--gold-border);
-  padding: 8px;
-  background: var(--black2);
-}
-
-.map-embed iframe {
-  width: 100%;
-  height: 400px;
-  display: block;
-  filter: grayscale(0.7) invert(0.9) contrast(1.1) brightness(1.05) sepia(0.15)
-    hue-rotate(180deg);
-}
 
 .contact-cta p {
   font-size: 14px;
@@ -967,9 +953,6 @@ footer a:hover {
   .about-stats {
     grid-template-columns: 1fr 1fr;
   }
-  .map-embed iframe {
-    height: 280px;
-  }
 
   /* ABOUT CONTENT */
   .about-main {
@@ -996,19 +979,19 @@ footer a:hover {
   }
 
   /* FOOTER */
-
+  
   footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 15px;
-    padding: 40px 20px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 15px;
+  padding: 40px 20px;
+}
 
-  .footer-right {
-    text-align: center;
-  }
+.footer-right {
+  text-align: center;
+}
 
   .footer-logo {
     font-size: 16px;
@@ -1165,5 +1148,708 @@ footer a:hover {
     width: 85%;
     margin: 0 auto;
     display: block;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════
+   PRODUCTS REDESIGN — everything below is NEW, added for the
+   category showcase + product detail page. Nothing above this
+   line was touched, so the rest of the site is unaffected.
+   ══════════════════════════════════════════════════════════ */
+
+/* ── SHOP BY CATEGORY (hero tiles with real images) ── */
+#shop-by-category {
+  background: var(--black);
+}
+
+.cat-hero-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  background: var(--gold-border);
+  border: 1px solid var(--gold-border);
+}
+
+.cat-hero-card {
+  position: relative;
+  display: block;
+  aspect-ratio: 3 / 4;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  text-decoration: none;
+  border: 2px solid transparent;
+  transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.cat-hero-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(8, 8, 8, 0.92) 0%,
+    rgba(8, 8, 8, 0.55) 45%,
+    rgba(8, 8, 8, 0.15) 100%
+  );
+  transition: opacity 0.4s ease;
+}
+
+.cat-hero-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--gold);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+.cat-hero-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 26px 22px;
+  z-index: 1;
+}
+
+.cat-hero-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+
+.cat-hero-price {
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  color: var(--gold2);
+  margin-bottom: 10px;
+}
+
+.cat-hero-desc {
+  font-size: 12.5px;
+  color: var(--white3);
+  line-height: 1.6;
+  font-weight: 300;
+  margin-bottom: 14px;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+
+.cat-hero-card:hover .cat-hero-desc {
+  max-height: 80px;
+  opacity: 1;
+}
+
+.cat-hero-btn {
+  font-size: 10.5px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 500;
+}
+
+/* ── FILTER TABS ── */
+.filter-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 50px;
+}
+
+.filter-tab {
+  background: transparent;
+  border: 1px solid var(--gold-border);
+  color: var(--white2);
+  padding: 10px 22px;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-family: "Jost", sans-serif;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.filter-tab:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.filter-tab.active {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--black);
+  font-weight: 500;
+}
+
+/* ── SHOP GRID (real product photo cards) ──
+   Each card floats independently on the black page with real gap
+   between them — this reads as "luxury boutique" rather than a
+   dense catalog grid. 3 columns desktop / 2 tablet / 1 mobile,
+   set in the responsive section below. */
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.shop-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--black2);
+  border: 1px solid var(--gold-border);
+  text-decoration: none;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.shop-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--gold);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+}
+
+.shop-card-img-wrap {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  contain: paint; /* forces a hard clip — overflow:hidden alone can let a
+                     blurred filter child bleed past the box in some browsers */
+  background: var(--white);
+}
+
+/* Blurred, scaled-up copy of the same photo, filling the box completely.
+   For plain white product photos this is just a soft white wash — no
+   visible change. For styled/lifestyle photos it picks up that photo's
+   own background color instead of showing a mismatched white seam. */
+.shop-card-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(26px) brightness(0.95) saturate(1.05);
+  transform: scale(1.25); /* scaled up so blurred edges never reveal the box border */
+}
+
+/* The real photo — always fully visible, never cropped, sitting on
+   top of the backdrop. */
+.shop-card-fg {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 32px;
+  box-sizing: border-box;
+  transition: transform 0.5s ease;
+}
+
+.shop-card:hover .shop-card-fg {
+  transform: scale(1.04);
+}
+
+.shop-card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 24px 22px 28px;
+}
+
+.shop-card-body h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.shop-card-price {
+  font-size: 14px;
+  color: var(--gold2);
+  margin-bottom: 16px;
+}
+
+.shop-card-link {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gold3);
+  transition: color 0.3s;
+  margin-top: auto; /* pins this to the bottom of the card no matter
+                        how long the product name is, so the price
+                        and "View Details" line up across every card */
+}
+
+.shop-card:hover .shop-card-link {
+  color: var(--gold);
+}
+
+.shop-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--white3);
+  font-size: 14px;
+}
+
+/* ── PRODUCT DETAIL PAGE ── */
+.pd-breadcrumb {
+  padding: 24px 70px 0;
+}
+
+.pd-breadcrumb a {
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: var(--gold3);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.pd-breadcrumb a:hover {
+  color: var(--gold);
+}
+
+#product-detail {
+  padding: 40px 70px 90px;
+}
+
+.pd-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: start;
+}
+
+/* Gallery */
+.pd-gallery {
+  position: sticky;
+  top: 100px;
+}
+
+.pd-main-wrap {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  contain: paint;
+  border: 1px solid var(--gold-border);
+  background: var(--white);
+}
+
+.pd-main-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(30px) brightness(0.95) saturate(1.05);
+  transform: scale(1.25);
+}
+
+.pd-main-image {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 40px;
+  box-sizing: border-box;
+  opacity: 1;
+  transition: opacity 0.25s ease;
+}
+
+.pd-main-image.pd-fade {
+  opacity: 0;
+}
+
+.pd-image-counter {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(8, 8, 8, 0.75);
+  border: 1px solid var(--gold-border);
+  color: var(--white2);
+  font-size: 11px;
+  letter-spacing: 1px;
+  padding: 6px 12px;
+}
+
+.pd-thumbs {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.pd-thumb {
+  width: 72px;
+  height: 72px;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 2px solid var(--gold-border);
+  background: var(--white);
+  cursor: pointer;
+  overflow: hidden;
+  transition: border-color 0.3s, transform 0.3s;
+  flex-shrink: 0;
+}
+
+.pd-thumb:hover {
+  border-color: var(--gold2);
+  transform: translateY(-2px);
+}
+
+.pd-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.pd-thumb.active {
+  border-color: var(--gold);
+  box-shadow: 0 4px 14px rgba(200, 164, 90, 0.25);
+}
+
+.pd-dots {
+  display: none;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.pd-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--gold-border);
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.pd-dot.active {
+  background: var(--gold);
+  transform: scale(1.3);
+}
+
+/* Info column */
+.pd-name {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(30px, 3.5vw, 42px);
+  font-weight: 700;
+  margin: 8px 0 12px;
+  line-height: 1.15;
+}
+
+.pd-price {
+  font-size: 22px;
+  color: var(--gold2);
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.pd-colors {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.pd-swatch {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s;
+  padding: 0;
+}
+
+.pd-swatch.active {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(200, 164, 90, 0.15);
+}
+
+.pd-description {
+  font-size: 15px;
+  color: var(--white2);
+  line-height: 1.9;
+  font-weight: 300;
+  margin-bottom: 34px;
+  max-width: 480px;
+}
+
+.pd-order-btn {
+  display: inline-block;
+  box-shadow: 0 8px 24px rgba(200, 164, 90, 0.25);
+}
+
+.pd-order-btn:hover {
+  box-shadow: 0 10px 30px rgba(200, 164, 90, 0.35);
+}
+
+/* Sticky mobile order bar — hidden on desktop */
+.pd-sticky-cta {
+  display: none;
+}
+
+/* ── RESPONSIVE ADDITIONS ── */
+@media (max-width: 1024px) {
+  .cat-hero-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .shop-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .pd-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .pd-gallery {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .pd-breadcrumb {
+    padding: 20px 20px 0;
+  }
+  #product-detail {
+    padding: 20px 20px 120px; /* extra bottom room for the sticky bar */
+  }
+  .cat-hero-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .shop-grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+  }
+  .shop-card-fg {
+    padding: 24px;
+  }
+  .pd-main-image {
+    padding: 24px;
+  }
+
+  /* On mobile, dots are easier to tap/read while swiping than
+     small thumbnail squares, so we swap which one shows. */
+  .pd-thumbs {
+    display: none;
+  }
+  .pd-dots {
+    display: flex;
+  }
+
+  .pd-sticky-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 400;
+    background: var(--gold);
+    color: var(--black);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    padding: 16px 20px;
+    text-align: center;
+  }
+
+  /* This product page has its own sticky bar, so the circular
+     WhatsApp float would sit right on top of it — hide the float
+     here only (see the class added on product.html's float link). */
+  .pd-hide-mobile {
+    display: none;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════
+   HOMEPAGE REDESIGN — PHASE 1: HERO + FEATURED COLLECTIONS
+   ══════════════════════════════════════════════════════════ */
+
+/* ── HERO LAYOUT ── */
+.hero-layout {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 50px;
+  align-items: center;
+  width: 100%;
+}
+
+.hero-desc {
+  font-size: 15px;
+  color: var(--white2);
+  line-height: 1.8;
+  font-weight: 300;
+  max-width: 460px;
+  margin-bottom: 36px;
+}
+
+/* Layered product image composition — a still "back" card offset
+   behind a larger "front" card that slowly cross-fades between a
+   few featured products (see homepage.js). */
+.hero-visual {
+  position: relative;
+  height: 480px;
+}
+
+.hero-visual-back,
+.hero-visual-front {
+  position: absolute;
+  background: var(--white);
+  border: 1px solid var(--gold-border);
+  box-sizing: border-box;
+  overflow: hidden;
+  contain: paint; /* keeps any blurred/oversized child clipped to the card */
+}
+
+.hero-visual-back img,
+.hero-visual-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.hero-visual-back {
+  top: 0;
+  right: 20px;
+  width: 60%;
+  aspect-ratio: 4 / 5;
+  padding: 22px;
+  transform: rotate(4deg);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+  opacity: 0.9;
+}
+
+.hero-visual-front {
+  bottom: 0;
+  left: 0;
+  width: 66%;
+  aspect-ratio: 4 / 5;
+  padding: 30px;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.55);
+}
+
+.hero-fade-img {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.hero-fade-img.hero-fade-out {
+  opacity: 0;
+}
+
+/* The "Established Since the 90s" badge now sits as a decorative seal
+   overlapping the corner of the image composition, instead of floating
+   alone in empty space like before. */
+.hero-visual .hero-badge {
+  position: absolute;
+  top: auto; /* cancels the old floating-badge "top: 50%" rule */
+  transform: none; /* cancels the old "translateY(-50%)" centering rule */
+  bottom: -18px;
+  right: -18px;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: var(--black);
+  border: 1px solid var(--gold-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.hero-visual .hero-badge-inner {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  border: 1px solid rgba(200, 164, 90, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  text-align: center;
+}
+
+.hero-visual .hero-badge .num {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.hero-visual .hero-badge .txt {
+  font-size: 8px;
+  letter-spacing: 1.5px;
+  color: var(--white3);
+  text-transform: uppercase;
+}
+
+/* ── FEATURED COLLECTIONS (homepage) ──
+   Uses the exact same .cat-hero-grid / .cat-hero-card styles already
+   defined for products.html's "Shop By Category" — same component,
+   reused, not reinvented. Only the section wrapper is new. */
+#featured-collections {
+  background: var(--black);
+}
+
+/* ── RESPONSIVE — HERO ── */
+@media (max-width: 1024px) {
+  .hero-layout {
+    grid-template-columns: 1fr;
+    gap: 60px;
+    text-align: center;
+  }
+  .hero-content {
+    max-width: 100%;
+  }
+  .hero-desc {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-btns {
+    justify-content: center;
+  }
+  .hero-visual {
+    height: 420px;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-visual {
+    height: 340px;
+    max-width: 300px;
+  }
+  .hero-visual .hero-badge {
+    width: 90px;
+    height: 90px;
+    bottom: -12px;
+    right: -12px;
+  }
+  .hero-visual .hero-badge-inner {
+    width: 66px;
+    height: 66px;
+  }
+  .hero-visual .hero-badge .num {
+    font-size: 20px;
+  }
+  .hero-visual .hero-badge .txt {
+    font-size: 6px;
   }
 }

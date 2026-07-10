@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Our Products | Travel Bags, Backpacks & Luggage - Udems Luxe</title>
+    <title id="pd-page-title">Product — Udems Luxe Collections</title>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -17,30 +17,12 @@
     />
     <meta
       name="description"
-      content="Shop premium bags and luggage at Udems Luxe Collections in Lagos Broad Street. Fashion bags, school bags, travel luggage, lunch bags and more. Order on WhatsApp!"
-    />
-    <meta
-      name="keywords"
-      content="buy bags Lagos, fashion bags Broad Street, school bags Lagos Island, travel luggage Nigeria, lunch bags Lagos, shoulder bags Nigeria"
+      id="pd-meta-description"
+      content="Shop premium bags at Udems Luxe Collections, Broad Street Lagos. Order via WhatsApp."
     />
     <meta name="author" content="Ajagbe Gideon" />
-    <meta property="og:title" content="Our Products — Udems Luxe Collections" />
-    <meta
-      property="og:url"
-      content="https://www.udemsluxecollections.com/products.html"
-    />
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:image"
-      content="https://www.udemsluxecollections.com/images/og-image.jpg"
-    />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+    <meta property="og:type" content="product" />
     <meta property="og:site_name" content="Udems Luxe Collections" />
-    <meta
-      property="og:description"
-      content="Shop premium bags and luggage at Udems Luxe Collections in Lagos Broad Street. Fashion bags, school bags, travel luggage, lunch bags and more."
-    />
     <link rel="stylesheet" href="styles.css" />
     <!-- Google tag (gtag.js) -->
     <script
@@ -92,41 +74,53 @@
     </header>
 
     <main>
-      <!-- PAGE HERO -->
-      <section id="page-hero">
-        <p class="hero-label">Our Collection</p>
-        <h1 class="page-hero-title">Our <em>Products</em></h1>
-        <p class="page-hero-sub">Premium bags and luggage for every journey</p>
-      </section>
+      <div class="pd-breadcrumb">
+        <a href="products.html">← Back to Products</a>
+      </div>
 
-      <!-- SHOP BY CATEGORY -->
-      <section id="shop-by-category">
-        <p class="s-label">Shop By Category</p>
-        <h2 class="s-title">Find Your<br /><em>Perfect Carry</em></h2>
+      <!-- PRODUCT DETAIL -->
+      <section id="product-detail">
+        <div class="pd-layout">
+          <!-- GALLERY -->
+          <div class="pd-gallery">
+            <div class="pd-main-wrap">
+              <img id="pd-main-bg" class="pd-main-bg" alt="" aria-hidden="true" />
+              <img id="pd-main-image" src="" alt="" class="pd-main-image" />
+              <span id="pd-image-counter" class="pd-image-counter"></span>
+            </div>
 
-        <div class="cat-hero-grid" id="cat-hero-grid">
-          <!-- rendered by products-page.js from CATEGORIES -->
+            <div id="pd-thumbs" class="pd-thumbs"></div>
+            <div id="pd-dots" class="pd-dots"></div>
+          </div>
+
+          <!-- INFO -->
+          <div class="pd-info">
+            <p class="s-label" id="pd-category-label"></p>
+            <h1 class="pd-name" id="pd-name"></h1>
+            <p class="pd-price" id="pd-price"></p>
+
+            <div id="pd-colors" class="pd-colors"></div>
+
+            <p class="pd-description" id="pd-description"></p>
+
+            <a
+              href="#"
+              id="pd-whatsapp-btn"
+              class="btn-primary pd-order-btn"
+              target="_blank"
+              >Order on WhatsApp</a
+            >
+          </div>
         </div>
       </section>
 
-      <!-- FULL PRODUCT GRID -->
-      <section id="shop-grid-section">
-        <div class="filter-tabs" id="filter-tabs">
-          <!-- rendered by products-page.js: "All" + one tab per category -->
-        </div>
+      <div class="divider"><span>✦</span></div>
 
-        <div class="shop-grid" id="shop-grid">
-          <!-- rendered by products-page.js from PRODUCTS -->
-        </div>
-
-        <div class="prod-cta">
-          <a
-            href="https://wa.me/2349022844951?text=Hello,%20I%20want%20to%20place%20an%20order%20from%20Udems%20Luxe%20Collections"
-            class="btn-primary"
-            target="_blank"
-            >Place Your Order Now</a
-          >
-        </div>
+      <!-- RELATED PRODUCTS -->
+      <section id="pd-related-section">
+        <p class="s-label">You May Also Like</p>
+        <h2 class="s-title">More From This<br /><em>Collection</em></h2>
+        <div class="shop-grid" id="pd-related"></div>
       </section>
     </main>
 
@@ -147,16 +141,21 @@
       </div>
     </footer>
 
-    <!-- WHATSAPP FLOAT -->
+    <!-- STICKY MOBILE ORDER BAR -->
+    <a href="#" id="pd-sticky-whatsapp" class="pd-sticky-cta" target="_blank">
+      Order on WhatsApp — <span id="pd-sticky-price"></span>
+    </a>
+
+    <!-- WHATSAPP FLOAT (desktop only — mobile has the sticky bar above) -->
     <a
       href="https://wa.me/2349022844951?text=Hello,%20I%20want%20to%20place%20an%20order%20from%20Udems%20Luxe%20Collections"
-      class="wa-float"
+      class="wa-float pd-hide-mobile"
       target="_blank"
     >
       <img src="images/whatsapp.png" alt="WhatsApp" width="30" height="30" />
     </a>
   </body>
   <script src="products-data.js"></script>
-  <script src="products-page.js"></script>
+  <script src="gallery.js"></script>
   <script src="script.js"></script>
 </html>
