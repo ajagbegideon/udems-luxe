@@ -188,11 +188,7 @@ const PRODUCTS = [
     description:
       "An insulated, easy-to-clean lunch bag sized for kids — keeps food fresh for school and daily outings.",
     images: [
-      "images/products/lunch-bags/kids-lunch-bag-1.webp",
-      "images/products/lunch-bags/kids-lunch-bag-2.webp",
-      "images/products/lunch-bags/kids-lunch-bag-3.webp",
-      "images/products/lunch-bags/kids-lunch-bag-4.webp",
-      "images/products/lunch-bags/kids-lunch-bag-5.webp",
+      "images/products/lunch-bags/kids-lunch-bag-1.webp"
     ],
   },
 ];

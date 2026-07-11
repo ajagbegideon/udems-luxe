@@ -44,7 +44,7 @@ if (heroFrontImg) {
   // fine that this list is deliberately short and specific.
   var heroFeaturedIds = [
     "black-pleated-fashion-bag",
-    "premium-handbag-purse-set",
+    "laptop-backpack",
     "blue-fashion-bag-pink-charm",
   ];
   var heroIndex = 0;
