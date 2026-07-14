@@ -42,10 +42,9 @@
     <!-- NAVIGATION -->
     <header>
       <nav>
-        <div class="logo">
-          Udems Luxe
-          <span>Collections</span>
-        </div>
+        <a href="index.html" class="logo">
+          <img src="apple-touch-icon.png" alt="Udems Luxe Collections" />
+        </a>
         <ul class="nav-links" id="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="products.html" class="active">Products</a></li>
@@ -64,6 +63,26 @@
             target="_blank"
             >Place Order</a
           >
+          <a href="#" class="cart-icon-link" aria-label="View cart">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <path
+                d="M6 8V6a6 6 0 1 1 12 0v2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M3.5 8h17l-1.2 12.5a2 2 0 0 1-2 1.5H6.7a2 2 0 0 1-2-1.5L3.5 8Z"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <span class="cart-count" id="cart-count">0</span>
+          </a>
           <button class="hamburger" id="hamburger" aria-label="Open menu">
             <span></span>
             <span></span>
@@ -115,6 +134,10 @@
               target="_blank"
               >Order on WhatsApp</a
             >
+            <button id="pd-add-to-cart-btn" class="btn-ghost">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 8V6a6 6 0 1 1 12 0v2" stroke-linecap="round"/><path d="M3.5 8h17l-1.2 12.5a2 2 0 0 1-2 1.5H6.7a2 2 0 0 1-2-1.5L3.5 8Z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  Add to Cart
+</button>
           </div>
         </div>
       </section>
@@ -150,6 +173,7 @@
     <a href="#" id="pd-sticky-whatsapp" class="pd-sticky-cta" target="_blank">
       Order on WhatsApp — <span id="pd-sticky-price"></span>
     </a>
+   
 
     <!-- WHATSAPP FLOAT (desktop only — mobile has the sticky bar above) -->
     <a
@@ -159,8 +183,33 @@
     >
       <img src="images/whatsapp.png" alt="WhatsApp" width="30" height="30" />
     </a>
+    <!-- CART DRAWER -->
+    <div id="cart-overlay" class="cart-overlay"></div>
+    <div id="cart-drawer" class="cart-drawer">
+      <div class="cart-drawer-header">
+        <h3>Your Cart</h3>
+        <button
+          id="cart-close-btn"
+          class="cart-close-btn"
+          aria-label="Close cart"
+        >
+          ✕
+        </button>
+      </div>
+      <div id="cart-items" class="cart-items"></div>
+      <div class="cart-drawer-footer">
+        <div class="cart-subtotal">
+          <span>Subtotal</span>
+          <span id="cart-subtotal-amount">₦0</span>
+        </div>
+        <a id="cart-checkout-btn" href="#" class="btn-primary" target="_blank"
+          >Checkout on WhatsApp</a
+        >
+      </div>
+    </div>
   </body>
   <script src="products-data.js"></script>
+  <script src="cart.js"></script>
   <script src="gallery.js"></script>
   <script src="script.js"></script>
 </html>

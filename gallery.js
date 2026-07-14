@@ -25,6 +25,7 @@ if (!product) {
 // ── GALLERY STATE ──
 // These variables track what the gallery is currently doing.
 var currentImages = [];
+var selectedColorName = null;   // ← add this line
 var currentIndex = 0;
 var autoplayInterval = null;
 var pausedByHover = false; // true while mouse is over the gallery (desktop) or mid-swipe
@@ -61,6 +62,7 @@ function setupProduct() {
 
   // Starting image set: first color if colors exist, else the product's own images
   currentImages = product.colors ? product.colors[0].images : product.images;
+  selectedColorName = product.colors ? product.colors[0].name : undefined;
   currentIndex = 0;
 
   renderColorSwatches();
@@ -107,6 +109,7 @@ document.getElementById("pd-colors").addEventListener("click", function (event) 
 
   // Never mix images from different colors — fully replace the set
   currentImages = chosenColor.images;
+  selectedColorName = chosenColor.name;
   currentIndex = 0;
 
   document.querySelectorAll(".pd-swatch").forEach(function (el) {
@@ -291,3 +294,13 @@ function renderRelatedProducts() {
 }
 
 setupProduct();
+document.getElementById("pd-add-to-cart-btn").addEventListener("click", function () {
+  addToCart({
+    id: product.id,
+    name: product.name,
+    price: product.price,
+    image: currentImages[0],
+    color: selectedColorName,
+  });
+  openCart(product.name + " added to cart!"); // just a placeholder — piece 3 replaces this with the actual drawer popping open
+});

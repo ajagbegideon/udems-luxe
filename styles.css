@@ -41,6 +41,13 @@ body {
    3. TYPOGRAPHY & SHARED UI (BUTTONS, SECTION LABELS, PAGE HEADERS)
    ══════════════════════════════════════════════════════════ */
 
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #0b0b0b;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+}
 .btn-primary {
   background: var(--gold);
   color: var(--black);
@@ -63,6 +70,7 @@ body {
 .btn-ghost {
   border: 1px solid rgba(200, 164, 90, 0.35);
   color: var(--white2);
+  background: transparent;
   padding: 16px 40px;
   font-size: 11px;
   letter-spacing: 3px;
@@ -197,22 +205,17 @@ nav {
 }
 
 .logo {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 20px;
-  font-weight: 600;
-  letter-spacing: 4px;
-  color: var(--gold);
-  text-transform: uppercase;
+  display: flex;
+  align-items: center;
 }
 
-.logo span {
+.logo img {
+  position: absolute;
+  bottom: 35%;
+  height: 90px;
+  margin-bottom: -30px;
+  width: auto;
   display: block;
-  font-size: 11px;
-  letter-spacing: 6px;
-  color: var(--white3);
-  font-family: "Jost", sans-serif;
-  font-weight: 300;
-  margin-top: 2px;
 }
 
 .nav-links {
@@ -240,7 +243,8 @@ nav {
   background: transparent;
   border: 1px solid var(--gold);
   color: var(--gold);
-  padding: 11px 28px;
+  margin-right: 20px;
+  padding: 11px 30px;
   font-size: 11px;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -263,6 +267,55 @@ nav {
   display: flex;
   align-items: center;
   gap: 16px;
+}
+
+/* Cart icon — visual only for now, no functionality wired up yet.
+   That's a deliberate next step, not an oversight. */
+.cart-icon-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.cart-icon-link svg {
+  width: 22px;
+  height: 22px;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--black);
+  font-family: "Jost", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cart-empty-link {
+  color: var(--gold);
+  text-decoration: underline;
+  display: inline-block;
+  margin-top: 10px;
+}
+.shop-card-add-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.shop-card-add-btn svg {
+  width: 14px;
+  height: 14px;
 }
 
 .hamburger {
@@ -833,7 +886,6 @@ nav {
   height: 100%;
   background: var(--black2);
   border: 1px solid var(--gold-border);
-  text-decoration: none;
   transition:
     transform 0.35s ease,
     box-shadow 0.35s ease,
@@ -846,6 +898,47 @@ nav {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
 }
 
+.shop-card-link {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  text-decoration: none;
+  color: inherit;
+}
+
+.shop-card-view {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gold3);
+  transition: color 0.3s;
+  margin-top: auto;
+}
+
+.shop-card:hover .shop-card-view {
+  color: var(--gold);
+}
+
+.shop-card-add-btn {
+  margin: 0 22px 22px;
+  padding: 10px;
+  background: transparent;
+  border: 1px solid var(--gold-border);
+  color: var(--gold);
+  font-family: "Jost", sans-serif;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    background 0.3s,
+    color 0.3s;
+}
+
+.shop-card-add-btn:hover {
+  background: var(--gold);
+  color: var(--black);
+}
 .shop-card-img-wrap {
   position: relative;
   aspect-ratio: 4 / 5;
@@ -878,10 +971,6 @@ nav {
   transition: transform 0.5s ease;
 }
 
-.shop-card:hover .shop-card-fg {
-  transform: scale(1.04);
-}
-
 .shop-card-body {
   display: flex;
   flex-direction: column;
@@ -903,20 +992,23 @@ nav {
   color: var(--gold2);
   margin-bottom: 16px;
 }
-
-.shop-card-link {
-  font-size: 10px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: var(--gold3);
-  transition: color 0.3s;
-  margin-top: auto; /* pins this to the bottom of the card no matter
-                        how long the product name is, so the price
-                        and "View Details" line up across every card */
+.cart-qty-input {
+  width: 44px;
+  text-align: center;
+  background: var(--black);
+  border: 1px solid var(--gold-border);
+  color: var(--white);
+  font-family: "Jost", sans-serif;
+  font-size: 13px;
+  padding: 4px 2px;
 }
 
-.shop-card:hover .shop-card-link {
-  color: var(--gold);
+/* removes the little up/down spinner arrows most browsers add by
+   default to number inputs — they look out of place here */
+.cart-qty-input::-webkit-outer-spin-button,
+.cart-qty-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .shop-empty {
@@ -1329,6 +1421,150 @@ footer a:hover {
   transform: scale(1.1);
   box-shadow: 0 6px 28px rgba(37, 211, 102, 0.5);
 }
+.cart-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 900;
+}
+.cart-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.cart-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 380px;
+  max-width: 90vw;
+  background: var(--black2);
+  border-left: 1px solid var(--gold-border);
+  z-index: 901;
+  transform: translateX(100%);
+  transition: transform 0.35s ease;
+  display: flex;
+  flex-direction: column;
+}
+.cart-drawer.open {
+  transform: translateX(0);
+}
+
+.cart-drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+  border-bottom: 1px solid var(--gold-border);
+}
+.cart-drawer-header h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 22px;
+  color: var(--white);
+}
+.cart-close-btn {
+  background: none;
+  border: none;
+  color: var(--white2);
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.cart-items {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 24px;
+}
+
+.cart-item {
+  display: flex;
+  gap: 14px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--gold-border);
+}
+.cart-item img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  background: var(--white);
+  border: 1px solid var(--gold-border);
+  flex-shrink: 0;
+}
+.cart-item-info h4 {
+  font-size: 13px;
+  color: var(--white);
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+.cart-item-price {
+  font-size: 12px;
+  color: var(--gold2);
+  margin-bottom: 8px;
+}
+.cart-item-qty {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.cart-qty-btn {
+  width: 22px;
+  height: 22px;
+  background: none;
+  border: 1px solid var(--gold-border);
+  color: var(--gold);
+  cursor: pointer;
+}
+.cart-item-remove {
+  background: none;
+  border: none;
+  color: var(--white3);
+  font-size: 11px;
+  cursor: pointer;
+  text-decoration: underline;
+  margin-left: auto;
+}
+.cart-empty {
+  color: var(--white3);
+  font-size: 13px;
+  text-align: center;
+  padding: 40px 0;
+}
+
+.cart-drawer-footer {
+  padding: 20px 24px;
+  border-top: 1px solid var(--gold-border);
+}
+.cart-subtotal {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: var(--white);
+  margin-bottom: 16px;
+}
+.cart-subtotal span:last-child {
+  color: var(--gold2);
+  font-weight: 600;
+}
+#pd-add-to-cart-btn {
+  margin-top: 12px;
+  width: 100%;
+}
+#pd-add-to-cart-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+#pd-add-to-cart-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
 /* ══════════════════════════════════════════════════════════
    12. TABLET RESPONSIVE (max-width: 1024px)
    Note on CSS cascading: a rule inside "max-width: 1024px" still
@@ -1450,8 +1686,7 @@ footer a:hover {
 }
 
 /* ══════════════════════════════════════════════════════════
-   13. MOBILE RESPONSIVE (max-width: 768px, with a Small Phones
-   tier at max-width: 480px for further fine-tuning)
+   13. MOBILE RESPONSIVE (max-width: 765px
    ══════════════════════════════════════════════════════════ */
 @media (max-width: 765px) {
   /* Navigation — full-screen overlay menu. z-index:500 is

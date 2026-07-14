@@ -187,9 +187,7 @@ const PRODUCTS = [
     price: 9000,
     description:
       "An insulated, easy-to-clean lunch bag sized for kids — keeps food fresh for school and daily outings.",
-    images: [
-      "images/products/lunch-bags/kids-lunch-bag-1.webp"
-    ],
+    images: ["images/products/lunch-bags/kids-lunch-bag-1.webp"],
   },
 ];
 
@@ -250,28 +248,6 @@ function buildCategoryCardHTML(cat) {
     "</a>"
   );
 }
-function whatsappOrderLink(productName, price) {
-  const phone = "2349022844951";
-  const message =
-    "Hello, I want to order the " +
-    productName +
-    " (" +
-    formatNaira(price) +
-    ") from Udems Luxe Collections.";
-  return "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
-}
-
-// Shared by products.html (product grid) AND product.html (related products)
-// so the card markup only ever lives in ONE place.
-//
-// Each card renders the SAME image twice, stacked:
-//  - a blurred copy filling the whole box edge-to-edge (the "backdrop")
-//  - the real, sharp, uncropped photo centered on top (the "foreground")
-// Plain white product photos look identical either way — a blurred white
-// image is still just white. But styled/lifestyle photos (their own
-// beige or dark background) get a matching blurred backdrop instead of
-// sitting in a mismatched white box, so nothing needs to be manually
-// flagged per-photo — it just works for both photo styles automatically.
 function buildShopCardHTML(product) {
   var thumb = product.colors ? product.colors[0].images[0] : product.images[0];
 
@@ -280,9 +256,10 @@ function buildShopCardHTML(product) {
     : formatNaira(product.price);
 
   return (
+    '<div class="shop-card">' +
     '<a href="product.html?id=' +
     product.id +
-    '" class="shop-card">' +
+    '" class="shop-card-link">' +
     '<div class="shop-card-img-wrap">' +
     '<img src="' +
     thumb +
@@ -300,8 +277,22 @@ function buildShopCardHTML(product) {
     '<p class="shop-card-price">' +
     priceLabel +
     "</p>" +
-    '<span class="shop-card-link">View Details →</span>' +
+    '<span class="shop-card-view">View Details →</span>' +
     "</div>" +
-    "</a>"
+    "</a>" +
+    '<button class="shop-card-add-btn" data-id="' +
+    product.id +
+    '"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 8V6a6 6 0 1 1 12 0v2" stroke-linecap="round"/><path d="M3.5 8h17l-1.2 12.5a2 2 0 0 1-2 1.5H6.7a2 2 0 0 1-2-1.5L3.5 8Z" stroke-linecap="round" stroke-linejoin="round"/></svg> Add to Cart</button>' +  
+    "</div>"
   );
+}
+function whatsappOrderLink(productName, price) {
+  const phone = "2349022844951";
+  const message =
+    "Hello, I want to order the " +
+    productName +
+    " (" +
+    formatNaira(price) +
+    ") from Udems Luxe Collections.";
+  return "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
 }
